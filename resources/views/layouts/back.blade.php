@@ -47,6 +47,7 @@
   <script src="{{ asset('backend/assets/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
   <script src="{{ asset('backend/assets/modules/moment.min.js')}}"></script>
   <script src="{{ asset('backend/assets/js/stisla.js')}}"></script>
+  <script src="{{ asset('backend/assets/modules/sweetalert/sweetalert.min.js')}}"></script>
 
   <!-- JS Libraies -->
   <script src="{{ asset('assets/modules/jquery.sparkline.min.js')}}"></script>
@@ -59,6 +60,14 @@
   <!-- Template JS File -->
   <script src="{{ asset('backend/assets/js/scripts.js')}}"></script>
   <script src="{{ asset('backend/assets/js/custom.js')}}"></script>
+  <script>
+    @if (session('success'))
+        swal("Success!", "{{ session('success') }}", "success");
+    @endif
+    @if (session('error'))
+        swal("Error!", "{{ session('error') }}", "error");
+    @endif
+  </script>
   @stack('scripts')
 </body>
 </html>

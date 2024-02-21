@@ -110,8 +110,13 @@ class UserController extends Controller
 
         $user->syncRoles($request->roles);
 
+        if(empty($request->from)){
         return redirect()->route('users.index')
                 ->withSuccess('User is updated successfully.');
+        }else{
+            return redirect()->route('profile')
+                ->withSuccess('Profile is updated successfully.');
+        }
     }
 
     /**
