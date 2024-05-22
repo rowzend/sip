@@ -18,7 +18,7 @@ use App\Http\Controllers\PermissionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
@@ -29,5 +29,5 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])-
 Route::resources([
     'roles' => RoleController::class,
     'users' => UserController::class,
-    'permissions'=>PermissionController::class
+    'permissions' => PermissionController::class
 ]);
